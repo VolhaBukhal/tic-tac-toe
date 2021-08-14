@@ -8,8 +8,8 @@ resetBtn.addEventListener('click', () => {
 });
 
 function render() {
+    console.log(game.field);
     let html = '';
-
     for (let i = 0; i < 3; i++) {
         html += '<div class="row">';
 
@@ -32,7 +32,7 @@ gameCanvas.addEventListener('click', e => {
 
     const rowIndex = Array.from(gameCanvas.children).indexOf(e.target.parentNode);
     const colIndex = Array.from(e.target.parentNode.children).indexOf(e.target);
-
+    
     game.nextTurn(rowIndex, colIndex);
 
     const winner = game.getWinner();
